@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,27 +17,32 @@ function App() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>Counter App</h1>
+    <div className="container">
+      <div className="card">
+        <h1>Counter App</h1>
 
-      <h2>{count}</h2>
+        <div className="count">{count}</div>
 
-      <button onClick={increment} style={{ margin: "5px" }}>
-        Increment
-      </button>
+        <div className="buttons">
+          <button className="increment-btn" onClick={increment}>
+            +
+          </button>
 
-      <button onClick={decrement} style={{ margin: "5px" }}>
-        Decrement
-      </button>
+          <button className="decrement-btn" onClick={decrement}>
+            -
+          </button>
 
-      <button onClick={reset} style={{ margin: "5px" }}>
-        Reset
-      </button>
-      {count > 10 ? (
-        <p>Counter is greater than 10</p>
-      ) : (
-        <p>Counter is 10 or below</p>
-      )}
+          <button className="reset-btn" onClick={reset}>
+            Reset
+          </button>
+        </div>
+
+        {count > 10 ? (
+          <p>Counter is greater than 10</p>
+        ) : (
+          <p>Counter is 10 or below</p>
+        )}
+      </div>
     </div>
   );
 }
